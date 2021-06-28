@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <!-- Animate CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+        <link href="{{ url_for('static', filename='customer/css/style.css') }}" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin=""/>
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://kit.fontawesome.com/f174e13019.js" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script> 
+        <style>
+            #mapdiv { height: 180px; width: 700px; }
+        </style>     
+        <title>Fetch JSON FROM MAP API</title>        
+    </head>
+    <body>
+        <h3>Where is the International Space Station</h3>
+        <p>
+            latitude: <span id="lat"></span>°</br>
+            longitude: <span id="lon"></span>°
+        </p>
+        <div id="mapdiv"></div>        
+        <script>
+            var myIcon = L.icon({
+                    iconUrl: '/images/iss.png',
+                    iconSize: [38, 95],
+                    iconAnchor: [22, 94]
+                });
+            const mymap = L.map('mapdiv').setView([0,0], 1);
+            const marker = L.marker([0, 0], {icon: myIcon}).addTo(mymap);
+            const attribution = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>';
+            const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+            const tiles = L.tileLayer(tileUrl,{attribution});
+            tiles.addTo(mymap);
+            const api_url = 'https://api.wheretheiss.at/v1/satellites/25544';
+            getISS(); 
+            setInterval(getISS, 1000)           
+            async function getISS() {
+                const response = await fetch(api_url);
+                const data = await response.json();
+                const {latitude, longitude} = data;                
+                marker.setLatLng([latitude, longitude]);
+                document.getElementById('lat').textContent = latitude.toFixed(2);
+                document.getElementById('lon').textContent = longitude.toFixed(2);
+                console.log(data.latitude);
+            };            
+        </script>      
+    </body>
+</html>
