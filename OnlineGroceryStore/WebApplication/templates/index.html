@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/style.css" />
-    <script type="module" scr="/static/js/index.js"></script>
+    <link rel="stylesheet" href="../static/style.css" />    
     <title>Online Grocery Store</title>
 </head>
 <body>
     <div class="grid-container">
         <header class="header">             
             <div class="brand">
+                <button onclick="openMenu()">&#9776;</button>
                 <a href="index.html">Online Grocery Store</a>
             </div>
             <div class="header-links">
@@ -20,7 +20,21 @@
             </div>
             </nav>
         </header>
-        <aside>
+        <aside class="sidebar">
+            <h3>Shopping Catagories</h3>
+            <button class="sidebar-close-button" onclick="closeMenu()">X</button>
+            <ul>
+                <li>
+                    <a href="index.html">Fruits</a>
+                </li>
+                <li>
+                    <a href="index.html">Vegetables</a>
+                </li>
+                <li>
+                    <a href="index.html">Dairy</a>
+                </li>
+            </ul>
+
         </aside>
         <main class="main">
         <div class="content">
@@ -33,12 +47,58 @@
                         </div>
                         <div class="product-brand">Roma</div>
                         <div class="product-price">$2/lb</div>
+                        <div class="product-rating">4.5 Stars (100 reviews)</div>
                     </div>
-                </li>                
+                </li>
+                <li >
+                    <div class="product">
+                        <img src="../images/vegetable1.jpg" alt="product" class="product-image"/>
+                        <div class="product-name">
+                            <a href="product.html">Tomato</a>
+                        </div>
+                        <div class="product-brand">Roma</div>
+                        <div class="product-price">$2/lb</div>
+                        <div class="product-rating">4.5 Stars (100 reviews)</div>
+                    </div>
+                </li> 
+                <li >
+                    <div class="product">
+                        <img src="../images/vegetable1.jpg" alt="product" class="product-image"/>
+                        <div class="product-name">
+                            <a href="product.html">Tomato</a>
+                        </div>
+                        <div class="product-brand">Roma</div>
+                        <div class="product-price">$2/lb</div>
+                        <div class="product-rating">4.5 Stars (100 reviews)</div>
+                    </div>
+                </li> 
+                <li >
+                    <div class="product">
+                        <img src="../images/vegetable1.jpg" alt="product" class="product-image"/>
+                        <div class="product-name">
+                            <a href="product.html">Tomato</a>
+                        </div>
+                        <div class="product-brand">Roma</div>
+                        <div class="product-price">$2/lb</div>
+                        <div class="product-rating">4.5 Stars (100 reviews)</div>
+                    </div>
+                </li>
+                <li >
+                    <div class="product">
+                        <img src="../images/vegetable1.jpg" alt="product" class="product-image"/>
+                        <div class="product-name">
+                            <a href="product.html">Tomato</a>
+                        </div>
+                        <div class="product-brand">Roma</div>
+                        <div class="product-price">$2/lb</div>
+                        <div class="product-rating">4.5 Stars (100 reviews)</div>
+                    </div>
+                </li>                 
             </ul>
         </div>
         </main>
         <footer class="footer">All rights reserved.</footer>
     </div>
+    <script  type="text/javascript" src="../static/js/main.js"></script>
 </body>
 </html>

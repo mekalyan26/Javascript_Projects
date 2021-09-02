@@ -67,21 +67,29 @@ text-decoration: none;
   height: 50rem;
   border-bottom: .1rem #c0c0c0 solid;
 }
+a {
+  text-decoration: none;  
+}
+a:hover{
+  color:#ff8000;
+}
 .product{
   display: flex;
   flex-direction:column;
   justify-content: space-between;
   height: 100%;
+  flex-wrap: wrap;
 }
 .product-name{
   font-size:2 rem;
+  font-weight:bold;
 }
 .product-brand{
   font-size:1.2rem;
   color: #808080;
 }
 .product-price{
-  font-size:2.5rem;
+  font-size:2rem;
   color:#808080;
 }
 
@@ -89,7 +97,45 @@ text-decoration: none;
   max-width: 34rem;
   max-height: 34rem;
 }
+.product-rating{
+  margin-bottom:1rem;
+}
 
+/* Sidebar */
+.brand button{
+font-size:3rem;
+padding: 0.5rem;
+background:none;
+border:none;
+color:#ffff;
+cursor: pointer;
+}
+
+.sidebar{
+position: fixed;
+transform: translateX(-30rem);
+width: 30rem;
+background-color: #f0f0f0;
+height: 100%;
+}
+.sidebar.open{
+  transform: translateX(0);
+}
+  
+.sidebar-close-button{
+  border-radius: 50%;
+  border: .1rem #0000 solid;
+  width:3rem;
+  height:3rem;
+  padding: .5rem;
+  padding-top: 0;
+  font-size: 1.5rem;
+  cursor: pointer;
+  position: absolute;
+  right: .5rem;
+  top: 1.5rem
+
+}
 
 /*
 
