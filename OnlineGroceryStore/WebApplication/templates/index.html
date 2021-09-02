@@ -5,34 +5,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../static/style.css" />
+    <script type="module" scr="/static/js/index.js"></script>
     <title>Online Grocery Store</title>
 </head>
 <body>
     <div class="grid-container">
-        <header class="header">
-            Welcome to the online Grocery          
+        <header class="header">             
             <div class="brand">
                 <a href="index.html">Online Grocery Store</a>
             </div>
             <div class="header-links">
                 <a href="cart.html">Cart</a>
-                <a href="signin.html">Sign In</a>
+                <a href="signin.html">Sign in</a>
             </div>
             </nav>
         </header>
         <aside>
         </aside>
         <main class="main">
-            <ul>
-                <li>Product 1</li>
-                <li>Product 2</li>
-                <li>Product 3</li>
-                <li>Product 4</li>
-                <li>Product 5</li>
+        <div class="content">
+            <ul class="products">
+                <li >
+                    <div class="product">
+                        <img src="../images/vegetable1.jpg" alt="product" class="product-image"/>
+                        <div class="product-name">
+                            <a href="product.html">Tomato</a>
+                        </div>
+                        <div class="product-brand">Roma</div>
+                        <div class="product-price">$2/lb</div>
+                    </div>
+                </li>                
             </ul>
+        </div>
         </main>
-        <footer class="footer">All rights reserved</footer>
-    </div>    
-    <script type="module" scr="/static/js/index.js"></script>    
+        <footer class="footer">All rights reserved.</footer>
+    </div>
 </body>
 </html>
