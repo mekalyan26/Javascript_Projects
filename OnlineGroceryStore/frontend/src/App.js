@@ -1,6 +1,9 @@
 import React from 'react';
 import data from './data';
-import './App.css'
+import {BrowserRouter, Route,Link} from 'react-router-dom';
+import './App.css';
+import HomeScreen from './Screens/HomeScreen';
+import ProductScreen from './Screens/ProductScreen';
 
 
 function App() {
@@ -12,11 +15,12 @@ function App() {
     document.querySelector(".sidebar").classList.remove("open");
   }
   return (
+    <BrowserRouter>
     <div className="grid-container">
     <header className="header">             
         <div className="brand">
             <button onClick={openMenu}>&#9776;</button>
-            <a href="index.html">Online Grocery Store</a>
+            <Link to="/">Online Grocery Store</Link>            
         </div>
         <div className="header-links">
             <a href="cart.html">Cart </a>
@@ -40,22 +44,8 @@ function App() {
     </aside>
     <main className="main">
     <div className="content">
-        <ul className="products">
-          {
-            data.products.map(product =>
-            <li >
-                <div className="product">
-                    <img src={product.image} alt="product" className="product-image"/>
-                    <div className="product-name">
-                        <a href="product.html">{product.name}</a>
-                    </div>
-                    <div className="product-brand">{product.brand}</div>
-                    <div className="product-price">{product.price}</div>
-                    <div className="product-rating">{product.rating} Stars {product.reviews}</div>
-                </div>
-            </li> )                           
-          } 
-        </ul>
+      <Route path="/products/:id" component={ProductScreen} />
+      <Route path="/" exact={true} component={HomeScreen} />      
     
         <div> 
           Recommended Products           
@@ -114,6 +104,7 @@ function App() {
     </main>
     <footer className="footer">All rights reserved.</footer>
 </div>
+</BrowserRouter>
   );
 }
 
