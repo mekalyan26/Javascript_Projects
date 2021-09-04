@@ -19,7 +19,7 @@ function App() {
             <a href="index.html">Online Grocery Store</a>
         </div>
         <div className="header-links">
-            <a href="cart.html">Cart</a>
+            <a href="cart.html">Cart </a>
             <a href="signin.html">Sign in</a>
         </div>        
     </header>
