@@ -1,6 +1,7 @@
 export default {
     products: [
     {
+        _id:'1',
         name:'Tomato',
         category: 'vegetables',
         image:'/images/vegetable1.jpg',
@@ -10,6 +11,7 @@ export default {
         reviews: 18
     },
     {
+        _id:'2',
         name:'Tomato',
         category: 'vegetables',
         image:'/images/vegetable1.jpg',
@@ -19,6 +21,7 @@ export default {
         reviews: 10
     },
     {
+        _id:'3',
         name:'Tomato',
         category: 'vegetables',
         image:'/images/vegetable1.jpg',
@@ -28,6 +31,7 @@ export default {
         reviews: 19
     },
     {
+        _id:'4',
         name:'Tomato',
         category: 'vegetables',
         image:'/images/vegetable1.jpg',
