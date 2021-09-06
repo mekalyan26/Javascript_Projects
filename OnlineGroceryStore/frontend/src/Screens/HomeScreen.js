@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import data from '../data'
+import data from '../data';
 
 function HomeScreen(props) {
     return <ul className="products">
@@ -9,7 +9,7 @@ function HomeScreen(props) {
       <li >
           <div className="product">
                 <Link to={'/product/' + product._id}>
-                    <img src={product.image} alt="product" className="product-image"/>              
+                    <img className="product-image" src={product.image} alt="product"/>              
                 </Link>  
               <div className="product-name">
                   <Link to={'/product/' + product._id}>{product.name}</Link>                  
@@ -22,5 +22,4 @@ function HomeScreen(props) {
     } 
   </ul>
 }
-
 export default HomeScreen;
