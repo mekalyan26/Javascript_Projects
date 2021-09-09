@@ -128,9 +128,21 @@ flex: 2 1 60rem;
   flex: 1 1 30rem;
 }
 
-.productdetails-info ul, productdetails-action ul{
+.productdetails-info ul, .productdetails-action ul{
   list-style-type: none;
   padding: 0;
+}
+
+.productdetails-info li, .productdetails-action li{
+  margin-bottom: 1rem;
+}
+
+.productdetails-back-to-results{
+  padding: 1rem;
+}
+
+.productdetails-addtocart-button:hover{
+  border: .3rem gray;
 }
 
 /* Sidebar */
@@ -171,6 +183,10 @@ height: 100%;
 }
 
 /* Recommended Products*/
+
+.recommend-products-main{
+  padding: 1rem;
+}
 .recommend-products{
   display: flex;  
 }

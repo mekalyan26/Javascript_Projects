@@ -49,7 +49,7 @@ function App() {
     <div>
        
     </div>
-    <div> 
+    <div className="recommend-products-main"> 
           Recommended Products           
             <ul className="recommend-products">
                 <li>
