@@ -39,6 +39,17 @@ export default {
         brand: 'vegbrand4',
         rating: 4.0,
         reviews: 10
+    },
+    {
+        _id:'5',
+        name:'veg5',
+        category: 'vegetables',
+        image:'/images/veg_generic.jpg',
+        price: 47,
+        brand: 'vegbrand4',
+        rating: 4.3,
+        reviews: 80
     }
 ]
-}
+};
+
