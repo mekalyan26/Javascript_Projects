@@ -128,8 +128,9 @@ flex: 2 1 60rem;
   flex: 1 1 30rem;
 }
 
-,productdetails-info ul, productdetails-action ul{
+.productdetails-info ul, productdetails-action ul{
   list-style-type: none;
+  padding: 0;
 }
 
 /* Sidebar */
