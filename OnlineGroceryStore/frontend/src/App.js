@@ -46,6 +46,9 @@ function App() {
       <Route path="/product/:id" component={ProductScreen} />
       <Route path="/" exact={true} component={HomeScreen} /> 
     </div>
+    <div>
+       
+    </div>
     <div> 
           Recommended Products           
             <ul className="recommend-products">

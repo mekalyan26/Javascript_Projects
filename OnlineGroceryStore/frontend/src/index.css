@@ -103,6 +103,35 @@ a:hover{
   margin-bottom: 1rem;
 }
 
+/*Product Details */
+.productdetails{
+display: flex;
+justify-content: space-between;
+align-items: flex-start;
+flex-wrap: wrap;
+}
+
+.productdetails-image {
+flex: 2 1 60rem;
+}
+
+.productdetails-image img{
+  max-width: 60rem;
+  width: 100%;
+}
+
+.productdetails-info{
+  flex: 1 1 30rem;
+}
+
+.productdetails-action{
+  flex: 1 1 30rem;
+}
+
+,productdetails-info ul, productdetails-action ul{
+  list-style-type: none;
+}
+
 /* Sidebar */
 .brand button{
 font-size:3rem;

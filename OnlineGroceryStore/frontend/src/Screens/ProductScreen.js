@@ -12,7 +12,7 @@ function ProductScreen(props) {
         </div>
         <div className="productdetails">
             <div className="productdetails-image">
-                <img className="product-image" src={product.image} alt="product"></img>
+                <img className="productdetails-image" src={product.image} alt="product"></img>
             </div>
             <div className="productdetails-all">
                 <ul>
@@ -32,6 +32,28 @@ function ProductScreen(props) {
                         </div>
                     </li>
                 </ul>            
+            </div>
+            <div className="productdetails-action">
+                <ul>
+                    <li>
+                        Price : {product.price}
+                    </li>
+                    <li>
+                        Status : {product.status}
+                    </li>
+                    <li>
+                        Qty : <select>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                        </select>
+                    </li>
+                    <li>
+                        <button>Add to cart</button>
+                    </li>
+                </ul>
+            
             </div> 
         </div>
     </div>
