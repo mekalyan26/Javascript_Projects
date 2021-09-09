@@ -3,10 +3,10 @@ import data from './data';
 
 const app = express();
 
-app.get("/api/producs", (req, res) => {
+app.get("/api/products", (req, res) => {
 
     res.send(data.products);
 
 })
 
-app.listen(5000,() => {console.log("server started")});
+app.listen(5000,() => {console.log("my server started at http://localhost:5000")});
