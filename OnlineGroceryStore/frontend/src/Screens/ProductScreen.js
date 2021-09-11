@@ -1,8 +1,21 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import data from '../data';
+import { useSelector, useDispatch } from 'react-redux';
+
 
 function ProductScreen(props) { 
+
+    const productDetails = useSelector(state => state.productDetails);
+    const {product, loading, error} = productDetails;
+    const dispatch = useDispatch;
+
+    useEffect(() => {
+        dispatch(detailsProduct());      
+        return() => {
+          //
+        };
+  
+      },[] )
 
     const product = data.products.find(x => x._id === props.match.params.id);
     
@@ -10,6 +23,8 @@ function ProductScreen(props) {
         <div className="productdetails-back-to-results">
             <Link to="/">Back to result</Link>
         </div>
+        {loading? <div>Loading ...</div>}
+            error? <div>{error}</div>
         <div className="productdetails">
             <div className="productdetails-image">
                 <img className="productdetails-image" src={product.image} alt="product"></img>
