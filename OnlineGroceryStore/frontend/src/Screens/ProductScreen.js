@@ -11,14 +11,10 @@ function ProductScreen(props) {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(detailsProduct());      
-        return() => {
-          //
-        };
-  
-      },[] )    
-    
-    return <div>        
+        dispatch(detailsProduct());
+    },[dispatch]);       
+        return( 
+     <div>        
         <div className="productdetails-back-to-results">
             <Link to="/">Back to result</Link>
         </div>
@@ -73,7 +69,7 @@ function ProductScreen(props) {
         </div>
          )
          }</div>
-         
+        );        
 }
 
 export default ProductScreen;
