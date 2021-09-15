@@ -6,13 +6,14 @@ import {detailsProduct} from '../actions/productActions';
 
 function ProductScreen(props) { 
 
-    const productDetails = useSelector(state => state.productDetails);
-    const { product, loading, error} = productDetails;
     const dispatch = useDispatch();
+    const productId = props.match.params.id;
+    const productDetails = useSelector(state => state.productDetails);
+    const { product, loading, error} = productDetails;   
 
     useEffect(() => {
-        dispatch(detailsProduct());
-    },[dispatch]);       
+        dispatch(detailsProduct(productId));
+    },[dispatch,productId]);       
         return( 
      <div>        
         <div className="productdetails-back-to-results">
