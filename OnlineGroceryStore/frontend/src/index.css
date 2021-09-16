@@ -75,6 +75,15 @@ a {
 a:hover{
   color:#ff8000;
 }
+
+ul{
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+li{
+  margin-top: 1rem;
+}
 .product{
   display: flex;
   flex-direction:column;
@@ -251,6 +260,14 @@ height: 100%;
 }
 .recommend-product-rating{
   margin-bottom: .5rem;
+}
+
+/*Alerting*/
+.success{
+  color:#20a020;
+}
+.error{
+  color:#a02020;
 }
 
 /*
