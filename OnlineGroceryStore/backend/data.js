@@ -6,9 +6,11 @@ export default {
         category: 'vegetables',
         image:'/images/veg_generic.jpg',
         price: 10,
+        status:'available',
         brand: 'vegbrand1',
         rating: 3.5,
-        reviews: 18
+        reviews: 18,
+        description: 'This is a seasonal vegetable'
     },
     {
         _id:'2',
@@ -16,9 +18,11 @@ export default {
         category: 'vegetables',
         image:'/images/veg_generic.jpg',
         price: 20,
+        status:'available',
         brand: 'vegbrand2',
         rating: 4.5,
-        reviews: 109
+        reviews: 109,
+        description: 'This is a seasonal vegetable'
     },
     {
         _id:'3',
@@ -26,9 +30,11 @@ export default {
         category: 'vegetables',
         image:'/images/veg_generic.jpg',
         price: 30,
+        status:'available',
         brand: 'vegbrand3',
         rating: 3.5,
-        reviews: 19
+        reviews: 19,
+        description: 'This is a seasonal vegetable'
     },
     {
         _id:'4',
@@ -36,9 +42,11 @@ export default {
         category: 'vegetables',
         image:'/images/veg_generic.jpg',
         price: 40,
+        status:'available',
         brand: 'vegbrand4',
         rating: 4.0,
-        reviews: 10
+        reviews: 10,
+        description: 'This is a seasonal vegetable'
     },
     {
         _id:'5',
@@ -46,9 +54,11 @@ export default {
         category: 'vegetables',
         image:'/images/veg_generic.jpg',
         price: 47,
+        status:'available',
         brand: 'vegbrand4',
         rating: 4.3,
-        reviews: 80
+        reviews: 80,
+        description: 'This is a seasonal vegetable'
     }
 ]
 };

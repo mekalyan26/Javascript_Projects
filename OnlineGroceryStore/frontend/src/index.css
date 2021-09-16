@@ -141,8 +141,36 @@ flex: 2 1 60rem;
   padding: 1rem;
 }
 
+.productdetails-action {
+  border: 0.1rem #808080 solid;
+  border-radius: 0.5rem;
+  background-color: #f8f8f8;
+  padding: 1rem;
+}
+
+.productdetails-action ul li:last-child {
+  display: flex;
+  flex-direction: column;
+}
+
 .productdetails-addtocart-button:hover{
   border: .3rem gray;
+}
+
+.button {
+  padding: 1rem;
+  border: 0.1rem #808080 solid;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+.button:hover {
+  border: 0.1rem #404040 solid;
+}
+.button.primary {
+  background-color: #f0c040;
+}
+.button.secondary {
+  background-color: #f0f0f0;
 }
 
 /* Sidebar */
