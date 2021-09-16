@@ -54,7 +54,10 @@ function ProductScreen(props) {
             <ul>
               <li>Price : {product.price}</li>
               <li>Status:{' '}
-                  {product.countInStock > 0 ? 'In Stock' : 'Unavailable.'}
+                  {product.countInStock > 0 ? (
+                      <span className="success">In Stock</span> 
+                  ):( <span className="error">Unavailable</span>                  
+                  )}
               </li>
               <li>
                   Qty:{' '}

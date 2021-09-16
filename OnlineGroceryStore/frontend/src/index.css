@@ -55,6 +55,17 @@ text-decoration: none;
   align-items: center;
 }
 
+.row{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:space-between;
+  align-items: center;
+}
+
+.row.center{
+  justify-content:center;
+}
+
 /* Home Screen */
 .products{
   display: flex;
@@ -270,6 +281,11 @@ height: 100%;
   color:#a02020;
 }
 
+.alert{
+  padding: 1rem;
+  border: 0.1rem solid transparent;
+  border-radius: 0.5rem;
+}
 /*
 
 body * {
