@@ -23,8 +23,8 @@ function App() {
             <Link to="/">Online Grocery Store</Link>            
         </div>
         <div className="header-links">
-            <a href="cart.html">Cart </a>
-            <a href="signin.html">Sign in</a>
+            <Link to="cart">Cart </Link>
+            <Link to="signin">Sign in</Link>
         </div>        
     </header>
     <aside className="sidebar">
