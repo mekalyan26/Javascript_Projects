@@ -28,9 +28,9 @@ function ProductScreen(props) {
         <div>{error}</div>
       ) : (
         <div className="productdetails">
-          <div className="productdetails-image">
+          <div className="productdetails-image-section">
             <img
-              className="productdetails-image"
+              className="productdetails-img"
               src={product.image}
               alt="product"
             ></img>
@@ -79,8 +79,12 @@ function ProductScreen(props) {
                     <button className="button primary" onClick={addToCartHandler}>Add to cart</button>
                     )}                 
                 </li>              
-            </ul>
-          </div>
+            </ul>            
+          </div>                    
+        <div className="productdetails-info-banner">
+            <h3>Available Offers</h3>            
+               <h4>Comming Soon... </h4>           
+        </div>
         </div>
       )}
     </div>

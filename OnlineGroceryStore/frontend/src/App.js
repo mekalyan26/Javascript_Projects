@@ -52,7 +52,7 @@ function App() {
        
     </div>
     <div className="recommend-products-main"> 
-          Recommended Products           
+          <h3 className="recommend-products-h3">Recommended Products </h3>          
             <ul className="recommend-products">
                 <li>
                     <div className="recommend-product" >                      
