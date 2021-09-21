@@ -1,4 +1,5 @@
 import React from 'react';
+import {useSelector} from 'react-redux';
 import {BrowserRouter, Route,Link} from 'react-router-dom';
 import './App.css';
 import HomeScreen from './screens/HomeScreen';
@@ -7,6 +8,9 @@ import CartScreen from './screens/CartScreen';
 
 
 function App() {
+
+  const cart = useSelector(state => state.cart);
+  const {cartItems} = cart;
 
   const openMenu= () =>{
     document.querySelector(".sidebar").classList.add("open");
@@ -23,7 +27,11 @@ function App() {
             <Link to="/">Online Grocery Store</Link>            
         </div>
         <div className="header-links">
-            <Link to="cart">Cart </Link>
+            <Link to="cart">Cart 
+            {cartItems.length > 0 && (
+              <span className="badge">{cartItems.length}</span>
+            )}
+            </Link>&nbsp;&nbsp;
             <Link to="signin">Sign in</Link>
         </div>        
     </header>
