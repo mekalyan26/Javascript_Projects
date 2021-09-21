@@ -46,7 +46,7 @@ export default function CartScreen(props) {
                     <img
                       src={item.image}
                       alt={item.name}
-                      className="productdetails-img"
+                      className="small"
                     ></img>
                   </div>
                   <div className="min-30">
