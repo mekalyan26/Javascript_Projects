@@ -71,6 +71,9 @@ body {
 .min-30 {
   min-width: 30rem;
 }
+.p-1 {
+  padding: 1rem;
+}
 .header-links a{
 color: #ffffff;
 text-decoration: none;
