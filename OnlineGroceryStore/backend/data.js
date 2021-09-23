@@ -1,4 +1,39 @@
+import bcrypt from 'bcrypt';
+
 export default {
+    
+    users:[
+        {
+            site_id:'01',
+            customer_name:'adminuser',
+            email:'kalyan@gmail.com',
+            address:"22 Baker's Street",
+            city:"NewCity",
+            state:"NewState",
+            zip_code:"zipcode01",
+            phone:"100-000-1001",
+            password: bcrypt.hashSync('1234', 8),
+            isAdmin: true,
+
+        },
+        {
+            site_id:'01',
+            customer_name:'user1',
+            email:'user1@gmail.com',
+            address:"123 Street",
+            city:"City1",
+            state:"State1",
+            zip_code:"zipcode01",
+            phone:"100-000-1111",
+            password: bcrypt.hashSync('1234', 8),
+            isAdmin: false
+
+        }
+        
+        
+
+    ],
+
     products: [
     {
         _id:'1',
