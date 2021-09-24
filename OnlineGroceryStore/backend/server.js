@@ -5,7 +5,7 @@ import userRouter from ".rounter/userRouter.js";
 
 const app = express();
 
-mongoose.connect("mongodb://localhost/onlinegroceriesstore", {
+mongoose.connect(process.env.MONGODB_URL || 'mongodb://localhost/onlinegroceriesstore', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true,
