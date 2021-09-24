@@ -36,7 +36,7 @@ export default {
 
     products: [
     {
-        _id:'1',
+        //_id:'1',
         name:'veg1',
         category: 'vegetables',
         image:'/images/veg_generic.jpg',
@@ -49,7 +49,7 @@ export default {
         description: 'This is a seasonal vegetable'
     },
     {
-        _id:'2',
+        //_id:'2',
         name:'veg2',
         category: 'vegetables',
         image:'/images/veg_generic.jpg',
@@ -62,7 +62,7 @@ export default {
         description: 'This is a seasonal vegetable'
     },
     {
-        _id:'3',
+        //_id:'3',
         name:'veg3',
         category: 'vegetables',
         image:'/images/veg_generic.jpg',
@@ -75,7 +75,7 @@ export default {
         description: 'This is a seasonal vegetable'
     },
     {
-        _id:'4',
+        //_id:'4',
         name:'veg4',
         category: 'vegetables',
         image:'/images/veg_generic.jpg',
@@ -88,7 +88,7 @@ export default {
         description: 'This is a seasonal vegetable'
     },
     {
-        _id:'5',
+        //_id:'5',
         name:'veg5',
         category: 'vegetables',
         image:'/images/veg_generic.jpg',

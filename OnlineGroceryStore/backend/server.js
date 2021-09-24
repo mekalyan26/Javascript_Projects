@@ -1,7 +1,8 @@
 import express from "express";
-import data from "./data";
+//import data from "./data";
 import mongoose from "mongoose";
 import userRouter from ".rounter/userRouter.js";
+import userRouter from ".rounter/productRouter.js";
 
 const app = express();
 
@@ -11,18 +12,21 @@ mongoose.connect(process.env.MONGODB_URL || 'mongodb://localhost/onlinegroceries
   useCreateIndex: true,
 });
 
-app.get("/api/products", (req, res) => {
+/*app.get("/api/products", (req, res) => {
   res.send(data.products);
-});
+});*/
 
 app.use('api/users', userRouter);
 
-app.get("/api/products/:id", (req, res) => {
+//http://localhost:5000/api/products/seed
+app.use('api/products', productRouter);
+
+/*app.get("/api/products/:id", (req, res) => {
   const productId = req.params.id;
   const product = data.products.find((x) => x._id === productId);
   if (product) res.send(product);
   else res.status(404).send({ msg: "Product not found" });
-});
+});*/
 
 app.use((err,req,res,next) =>{
 res.status(500).send({message: err.message});
