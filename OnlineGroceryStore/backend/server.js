@@ -6,20 +6,27 @@ import userRouter from ".rounter/productRouter.js";
 
 const app = express();
 
-mongoose.connect(process.env.MONGODB_URL || 'mongodb://localhost/onlinegroceriesstore', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useCreateIndex: true,
-});
+require("dotenv").config();
+
+//const connection_string = process.env.CONNECTION_STRING
+
+mongoose
+  .connect(process.env.CONNECTION_STRING, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+  })
+  .then(() => console.log("DB Connection Established"))
+  .catch((error) => console.error("DB Connection Failed : ", error.message));
 
 /*app.get("/api/products", (req, res) => {
   res.send(data.products);
 });*/
 
-app.use('api/users', userRouter);
+app.use("api/users", userRouter);
 
 //http://localhost:5000/api/products/seed
-app.use('api/products', productRouter);
+app.use("api/products", productRouter);
 
 /*app.get("/api/products/:id", (req, res) => {
   const productId = req.params.id;
@@ -28,8 +35,8 @@ app.use('api/products', productRouter);
   else res.status(404).send({ msg: "Product not found" });
 });*/
 
-app.use((err,req,res,next) =>{
-res.status(500).send({message: err.message});
+app.use((err, req, res, next) => {
+  res.status(500).send({ message: err.message });
 });
 
 app.listen(5000, () => {
