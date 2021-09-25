@@ -6,7 +6,7 @@ import HomeScreen from "./screens/HomeScreen";
 import ProductScreen from "./screens/ProductScreen";
 import CartScreen from "./screens/CartScreen";
 import SigninScreen from "./screens/SigninScreen";
-import SearchBox from './components/SearchBox';
+
 
 
 function App() {
@@ -27,13 +27,7 @@ function App() {
             <button onClick={openMenu}>&#9776;</button>
             <Link to="/">Online Grocery Store</Link>
           </div>
-          <div>
-            <Route
-              render={({ history }) => (
-                <SearchBox history={history}></SearchBox>
-              )}
-            ></Route>
-          </div>
+          
           <div >
             <Link to="/cart">
               Cart
