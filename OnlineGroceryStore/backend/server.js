@@ -3,10 +3,13 @@ import express from "express";
 import mongoose from "mongoose";
 import userRouter from ".rounter/userRouter.js";
 import userRouter from ".rounter/productRouter.js";
+import dotenv from "dotenv";
+
+require("dotenv").config();
 
 const app = express();
 
-require("dotenv").config();
+
 
 //const connection_string = process.env.CONNECTION_STRING
 
