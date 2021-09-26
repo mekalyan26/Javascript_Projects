@@ -2,15 +2,18 @@ import mongoose from "mongoose";
 
 const productSchema = new mongoose.Schema(
   {
-    product_name: { type: String, required: true, unique: true },
+    site_id: { type:String, required:false },
+    product_id: { type:String, required:false },
+    product_category_id: { type:String, required:false },
+    product_name: { type: String, required: true },
+    product_price:{type: Number,required:true},
     product_image_path:{type: String,required:false},
     product_brand:{type: String,required:false},
-    product_category:{type: String,required:false},
+    product_status:{type: String,required:false},
+    product_rating:{type: Number,required:false},
+    product_countInStock:{type: Number,required:false},
     product_description:{type: String,required:false},
-    product_price:{type: Number,required:true},
-    product_countInStock:{type: Number,required:true},
-    product_rating:{type: Number,required:true},
-    product_reviews:{type: Number,required:true},    
+    product_review:{type: Number,required:false},    
   },
   {
     timestamp: true,

@@ -17,7 +17,13 @@ productRouter.get(
   "/seed",
   expressAsyncHandler(async (req, res) => {
     //await Product.remove({});
-    const createdProducts = await User.insertMany(data.products);
+    const createdProducts = await Product.insertMany(data.Product);
+    if(createdProducts){
+      res.send(createdProducts)
+    }
+    else{
+        res.status(404).send( {message:'Product could not be entered'})
+    }
     res.send({ createdProducts });
   })
 );
