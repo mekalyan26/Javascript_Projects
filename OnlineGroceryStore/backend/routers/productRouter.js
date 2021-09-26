@@ -20,7 +20,7 @@ productRouter.get(
     //await Product.remove({});
     const createdProducts = await Product.insertMany(data.Product);
     if(createdProducts){
-      res.send(createdProducts)
+      res.send({createdProducts})
     }
     else{
         res.status(404).send( {message:'Product could not be entered'})
