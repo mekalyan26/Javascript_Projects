@@ -1,7 +1,8 @@
 import express from "express";
 import expressAsyncHandler from "express-async-handler";
-import User from "../models/productModels.js";
+import Product from "../models/productModels.js";
 import data from "../data.js";
+import mongoose from 'mongoose';
 
 const productRouter = express.Router();
 

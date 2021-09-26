@@ -1,9 +1,10 @@
 import express from "express";
 import expressAsyncHandler from "express-async-handler";
 import bcrypt from "bcryptjs";
-import User from "../models/userModels.js";
+import Customer from "../models/userModels.js";
 import data from "../data.js";
 import { generateToken } from "../utils.js";
+import mongoose from 'mongoose';
 
 const userRouter = express.Router();
 
