@@ -1,25 +1,20 @@
-import express from "express";
-//import data from "./data";
-import mongoose from "mongoose";
-import userRouter from ".rounter/userRouter.js";
-import userRouter from ".rounter/productRouter.js";
-import dotenv from "dotenv";
+import express from 'express';
+import mongoose from 'mongoose';
+import data from './data';
+import userRouter from './routers/userRouter.js';
+import productRouter from './routers/productRouter.js';
 
+//This is for loading environment specific details from a file
 require("dotenv").config();
 
 const app = express();
 
-
-
 //const connection_string = process.env.CONNECTION_STRING
 
 mongoose
-  .connect(process.env.CONNECTION_STRING, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true,
+  .connect(process.env.CONNECTION_STRING, {    
   })
-  .then(() => console.log("DB Connection Established"))
+  .then(() => console.log("MongoDB Connection Established"))
   .catch((error) => console.error("DB Connection Failed : ", error.message));
 
 /*app.get("/api/products", (req, res) => {

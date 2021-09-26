@@ -1,4 +1,4 @@
-import bcrypt from 'bcrypt';
+import bcrypt from 'bcryptjs';
 
 export default {
     
@@ -37,68 +37,68 @@ export default {
     products: [
     {
         //_id:'1',
-        name:'veg1',
-        category: 'vegetables',
-        image:'/images/veg_generic.jpg',
-        price: 10,
-        status:'available',
-        countInStock:10,
-        brand: 'vegbrand1',
-        rating: 3.5,
-        reviews: 18,
-        description: 'This is a seasonal vegetable'
+        product_name:'veg1',
+        product_category: 'vegetables',
+        product_image_path:'/images/veg_generic.jpg',
+        product_price: 10,
+        product_status:'available',
+        product_countInStock:10,
+        product_brand: 'vegbrand1',
+        product_rating: 3.5,
+        product_reviews: 18,
+        product_description: 'This is a seasonal vegetable'
     },
     {
         //_id:'2',
-        name:'veg2',
-        category: 'vegetables',
-        image:'/images/veg_generic.jpg',
-        price: 20,
-        status:'available',
+        product_name:'veg2',
+        product_category: 'vegetables',
+        product_image_path:'/images/veg_generic.jpg',
+        product_price: 20,
+        product_status:'available',
         countInStock:10,
-        brand: 'vegbrand2',
-        rating: 4.5,
-        reviews: 109,
-        description: 'This is a seasonal vegetable'
+        product_brand: 'vegbrand2',
+        product_rating: 4.5,
+        product_reviews: 109,
+        product_description: 'This is a seasonal vegetable'
     },
     {
         //_id:'3',
-        name:'veg3',
-        category: 'vegetables',
-        image:'/images/veg_generic.jpg',
-        price: 30,
-        status:'available',
-        countInStock:10,
-        brand: 'vegbrand3',
-        rating: 3.5,
-        reviews: 19,
-        description: 'This is a seasonal vegetable'
+        product_name:'veg3',
+        product_category: 'vegetables',
+        product_image_path:'/images/veg_generic.jpg',
+        product_price: 30,
+        product_status:'available',
+        product_countInStock:10,
+        product_brand: 'vegbrand3',
+        product_rating: 3.5,
+        product_reviews: 19,
+        product_description: 'This is a seasonal vegetable'
     },
     {
         //_id:'4',
-        name:'veg4',
-        category: 'vegetables',
-        image:'/images/veg_generic.jpg',
-        price: 40,
-        status:'available',
-        countInStock:10,
-        brand: 'vegbrand4',
-        rating: 4.0,
-        reviews: 10,
-        description: 'This is a seasonal vegetable'
+        product_name:'veg4',
+        product_category: 'vegetables',
+        product_image_path:'/images/veg_generic.jpg',
+        product_price: 40,
+        product_status:'available',
+        product_countInStock:10,
+        product_brand: 'vegbrand4',
+        product_rating: 4.0,
+        product_reviews: 10,
+        product_description: 'This is a seasonal vegetable'
     },
     {
         //_id:'5',
-        name:'veg5',
-        category: 'vegetables',
-        image:'/images/veg_generic.jpg',
-        price: 47,
-        status:'available',
-        countInStock:0,
-        brand: 'vegbrand4',
-        rating: 4.3,
-        reviews: 80,
-        description: 'This is a seasonal vegetable'
+        product_name:'veg5',
+        product_category: 'vegetables',
+        product_image:'/images/veg_generic.jpg',
+        product_price: 47,
+        product_status:'available',
+        product_countInStock:0,
+        product_brand: 'vegbrand4',
+        product_rating: 4.3,
+        product_reviews: 80,
+        product_description: 'This is a seasonal vegetable'
     }
 ]
 };
