@@ -7,8 +7,6 @@ import ProductScreen from "./screens/ProductScreen";
 import CartScreen from "./screens/CartScreen";
 import SigninScreen from "./screens/SigninScreen";
 
-
-
 function App() {
   const cart = useSelector((state) => state.cart);
   const { cartItems } = cart;
@@ -19,6 +17,8 @@ function App() {
   const closeMenu = () => {
     document.querySelector(".sidebar").classList.remove("open");
   };
+  const userSignin = useSelector((state) => state.userSignin);
+  const { userInfo } = userSignin;
   return (
     <BrowserRouter>
       <div className="grid-container">
@@ -27,16 +27,20 @@ function App() {
             <button onClick={openMenu}>&#9776;</button>
             <Link to="/">Online Grocery Store</Link>
           </div>
-          
+
           <div className="brand">
-            <Link  to="/cart">
+            <Link to="/cart">
               Cart
               {cartItems.length > 0 && (
                 <span className="badge">{cartItems.length}</span>
               )}
             </Link>
+            {userInfo ? (
+              <Link to="#">{userInfo.name}</Link>
+            ) : (
+              <Link to="signin">Sign in</Link>
+            )}
             &nbsp;&nbsp;
-            <Link to="signin">Sign in</Link>
           </div>
         </header>
         <aside className="sidebar">
