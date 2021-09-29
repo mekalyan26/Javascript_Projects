@@ -8,7 +8,7 @@ export default function SigninScreen() {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    //TODO: signin action
+    //TODO: signin 
   };
   return (
     <div>
@@ -45,7 +45,8 @@ export default function SigninScreen() {
         <div>
           <label />
           <div>
-            New Customer? <Link to="/register">Create your account</Link>
+            New Customer?  {' '}
+            <Link to="/register">Create your account</Link>
           </div>
         </div>
       </form>
