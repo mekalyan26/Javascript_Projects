@@ -38,7 +38,7 @@ export default function SigninScreen() {
         </div>
         <div>
           <label />
-          <button className="primary" type="submit">
+          <button className="button primary" type="submit">
             Sign In
           </button>
         </div>
