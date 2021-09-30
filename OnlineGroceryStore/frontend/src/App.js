@@ -1,11 +1,12 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { BrowserRouter, Route, Link } from "react-router-dom";
 import "./App.css";
 import HomeScreen from "./screens/HomeScreen";
 import ProductScreen from "./screens/ProductScreen";
 import CartScreen from "./screens/CartScreen";
 import SigninScreen from "./screens/SigninScreen";
+import { signout } from "./actions/userActions.js";
 
 function App() {
   const cart = useSelector((state) => state.cart);
@@ -19,6 +20,12 @@ function App() {
   };
   const userSignin = useSelector((state) => state.userSignin);
   const { userInfo } = userSignin;
+  
+  const dispatch = useDispatch();
+  const signoutHandler = () => {
+    dispatch(signout());
+  };
+
   return (
     <BrowserRouter>
       <div className="grid-container">
@@ -36,7 +43,16 @@ function App() {
               )}
             </Link>
             {userInfo ? (
-              <Link to="#">{userInfo.name}</Link>
+              <div className="dropdown">
+                <Link to="#">
+                  {userInfo.name} <i className="fa fa-caret-down"></i>
+                </Link>
+                <ul className="dropdown-content">
+                  <Link to="#signout" onClick={signoutHandler}>
+                    Sign out
+                  </Link>
+                </ul>
+              </div>
             ) : (
               <Link to="signin">Sign in</Link>
             )}
