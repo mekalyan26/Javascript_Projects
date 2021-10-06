@@ -6,12 +6,13 @@ import { signin } from "../actions/userActions.js";
 export default function SigninScreen(props) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  
   const redirect = props.location.search
     ? props.locations.search.split("=")[1]
     : "/";
 
     const userSignin = useSelector((state) => state.userSignin);
-    const { userInfo } = userSignin;
+    const { userInfo,loading, error } = userSignin;
 
   const dispatch = useDispatch();
 
@@ -24,7 +25,7 @@ export default function SigninScreen(props) {
       props.history.push(redirect);
     }
 
-  }, [userInfo]);
+  }, [props.history, redirect, userInfo]);
   return (
     <div>
       <form className="form" onSubmit={submitHandler}>
@@ -60,7 +61,10 @@ export default function SigninScreen(props) {
         <div>
           <label />
           <div>
-            New Customer? <Link to="/register">Create your account</Link>
+          New customer?{' '}
+            <Link to={`/register?redirect=${redirect}`}>
+              Create your account
+            </Link>
           </div>
         </div>
       </form>
