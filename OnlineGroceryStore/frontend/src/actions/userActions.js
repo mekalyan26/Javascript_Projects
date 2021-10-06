@@ -28,3 +28,22 @@ export const signout = () => async (dispatch) => {
   localStorage.removeItem("cartItems");
   dispatch({ type: USER_SIGNOUT });
 };
+
+
+export const register = (customer_name, email, password) => async (dispatch) => {
+  dispatch({ type: USER_REGISTER_REQUEST, payload: { email, password } });
+  try {
+    const { data } = await Axios.post("api/users/register", { customer_name, email, password });
+    dispatch({ type: USER_REGISTER_SUCCESS, payload: data });
+    dispatch({ type: USER_SIGNIN_SUCCESS, payload: data });
+    localStorage.setItem("userinfo", JSON.stringify(data));
+  } catch (error) {
+    dispatch({
+      type: USER_REGISTER_FAILURE,
+      payload:
+        error.response && error.response.data.message
+          ? error.response.data.message
+          : error.message,
+    });
+  }
+};

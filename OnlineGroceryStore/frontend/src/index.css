@@ -386,6 +386,11 @@ height: 100%;
 }
 
 /*Alerting*/
+
+.loading{
+  display: block !important;
+}
+
 .success{
   color:#20a020;
 }

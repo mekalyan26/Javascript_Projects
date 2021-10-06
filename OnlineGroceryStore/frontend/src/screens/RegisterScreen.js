@@ -7,6 +7,8 @@ export default function RegisterScreen(props) {
   const [customer_name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  onst [confirmPassword, setConfirmPassword] = useState('');
+
   const redirect = props.location.search
     ? props.locations.search.split("=")[1]
     : "/";
@@ -18,7 +20,12 @@ export default function RegisterScreen(props) {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    dispatch(register(customer_name, email, password));
+    if(password !== confirmPassword) {
+      alert('Password not matching')
+    }
+    else {
+      dispatch(register(customer_name, email, password));
+    }    
   };
   useEffect( () => {
     if(userInfo){
@@ -63,9 +70,19 @@ export default function RegisterScreen(props) {
           ></input>
         </div>
         <div>
+          <label htmlFor="confirmPassword">Confirm Password</label>
+          <input
+            type="password"
+            id="confirmpassword"
+            placeholder="Enter confirm Password"
+            required
+            onChange={(e) => setConfirmPassword(e.target.value)}
+          ></input>
+        </div>
+        <div>
           <label />
           <button className="button primary" type="submit">
-            Sign In
+            Register
           </button>
         </div>
         <div>
