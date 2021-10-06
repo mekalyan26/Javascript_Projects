@@ -1,18 +1,20 @@
-import React, { useState, useEffect }  from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { signin } from "../actions/userActions.js";
+import LoadingBox from "../components/LoadingBox";
+import MessageBox from "../components/MessageBox";
 
 export default function SigninScreen(props) {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
   const redirect = props.location.search
     ? props.locations.search.split("=")[1]
     : "/";
 
-    const userSignin = useSelector((state) => state.userSignin);
-    const { userInfo,loading, error } = userSignin;
+  const userSignin = useSelector((state) => state.userSignin);
+  const { userInfo, loading, error } = userSignin;
 
   const dispatch = useDispatch();
 
@@ -20,11 +22,10 @@ export default function SigninScreen(props) {
     e.preventDefault();
     dispatch(signin(email, password));
   };
-  useEffect( () => {
-    if(userInfo){
+  useEffect(() => {
+    if (userInfo) {
       props.history.push(redirect);
     }
-
   }, [props.history, redirect, userInfo]);
   return (
     <div>
@@ -61,7 +62,7 @@ export default function SigninScreen(props) {
         <div>
           <label />
           <div>
-          New customer?{' '}
+            New customer?{" "}
             <Link to={`/register?redirect=${redirect}`}>
               Create your account
             </Link>
