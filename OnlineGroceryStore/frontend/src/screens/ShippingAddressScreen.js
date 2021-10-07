@@ -8,8 +8,11 @@ export default function ShippingAddressScreen() {
     const [postalCode, setPostalCode] = useState('');
     const [country, setCountry] = useState('');
 
+    const dispatch = useDispatch();
+
     const submitHandler = (e) => {
         e.preventDefault();
+        dispatch(saveShippingAddress(fullName, address, city, postalCode, country));
 
     }
 
@@ -74,6 +77,10 @@ export default function ShippingAddressScreen() {
             onChange={(e) => setCountry(e.target.value)}
             required
           ></input>
+        </div>
+        <div>
+            <label/>
+            <button classname="primary" type="submit">Continue</button>
         </div>
       </form>
     </div>
