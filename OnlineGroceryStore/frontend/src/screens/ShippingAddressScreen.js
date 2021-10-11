@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
+import { saveShippingAddress } from "../actions/cartAction";
 import CheckoutSteps from "../components/CheckoutSteps";
 
-export default function ShippingAddressScreen() {
+export default function ShippingAddressScreen(props) {
     const [fullName, setFullName] = useState('');
     const [address, setAddress] = useState('');
     const [city, setCity] = useState('');
@@ -12,9 +13,10 @@ export default function ShippingAddressScreen() {
 
     const submitHandler = (e) => {
         e.preventDefault();
-        dispatch(saveShippingAddress(fullName, address, city, postalCode, country));
+        dispatch(saveShippingAddress({fullName, address, city, postalCode, country}));
 
     }
+    props.history.push('./payment');
 
   return (
     <div>
