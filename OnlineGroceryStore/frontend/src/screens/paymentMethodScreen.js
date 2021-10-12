@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
+import { savePaymentMethod } from "../actions/cartAction";
 import CheckoutSteps from "../components/CheckoutSteps";
 
 export default function PaymentMethodScreen(props) {
@@ -45,7 +46,7 @@ export default function PaymentMethodScreen(props) {
               checked
               onChange={(e) => setPaymentMethod(e.target.value)}
             ></input>
-            <label htmlfor="stripe">PayPal</label>
+            <label htmlfor="stripe">Stripe</label>
           </div>
         </div>
         <div>
