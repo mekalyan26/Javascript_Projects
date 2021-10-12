@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { savePaymentMethod } from "../actions/cartAction";
 import CheckoutSteps from "../components/CheckoutSteps";
 
 export default function PaymentMethodScreen(props) {
-
+    const cart = useSelector(state => state.cart);
+    const {shippingAddress} = cart;
     const [paymentMethod, setPaymentMethod] = useState('PayPal');
     const dispatch = useDispatch();
     const submitHandler = (e) =>{
