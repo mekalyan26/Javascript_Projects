@@ -3,6 +3,7 @@ import mongoose from 'mongoose';
 import data from './data';
 import userRouter from './routers/userRouter.js';
 import productRouter from './routers/productRouter.js';
+import orderRouter from './routers/orderRouter';
 
 require("dotenv").config();
 const app = express();
@@ -17,6 +18,7 @@ mongoose
 
 app.use('/api/users', userRouter);
 app.use('/api/products', productRouter);
+app.get('/api/orders',orderRouter);
 
 app.get('/', (req, res) => {
   res.send("Backend Server is ready");
