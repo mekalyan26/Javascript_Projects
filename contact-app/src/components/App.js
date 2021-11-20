@@ -10,6 +10,9 @@ function App() {
     // {id:"2", name:"Builder", email:"builder@gmail.com" }
 
     const [contacts, setContacts ] = useState([]);
+    const addContactHandler =(contact) => {
+      console.log(contact);
+    }
   
   
   return (
